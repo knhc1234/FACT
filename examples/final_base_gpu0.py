@@ -25,7 +25,7 @@ class CustomDataset(Dataset):
         return self.data1[idx].to(device), self.data2[idx].to(device), self.data3[idx].to(device), self.targets[idx].to(device)
 
 if __name__ == '__main__':
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     print(device)
     # Parameters
     level = 4
@@ -50,7 +50,7 @@ if __name__ == '__main__':
     dropout = 0.1
     learning_rate = 0.0005
 
-    title = "Final_layer{}_level{}_head{}_hidden{}_ff{}_dropout{}_lr{}_SHAP".format(num_layers, level, num_head, tr_hidden, ff_weight, dropout, learning_rate)
+    title = "Final_layer{}_level{}_head{}_hidden{}_ff{}_dropout{}_lr{}".format(num_layers, level, num_head, tr_hidden, ff_weight, dropout, learning_rate)
 
     print(title)
     DM = fun.get_atc_labels(label_path).to(device) 
