@@ -1,3 +1,4 @@
+import os
 import numpy as np
 import torch
 import torch.nn as nn
@@ -89,6 +90,11 @@ if __name__ == '__main__':
 
         model = Final_Model(input_dim = 2, layers = num_layers, hidden_dim = tr_hidden, num_head = num_head, ff_weight = ff_weight, drop_out = dropout, num_classes = 1).to(device)
         model_name = '../result/model/level{}/{}_{}.pt'.format(level, title, fold)
+        
+        model_dir = os.path.dirname(model_name)
+        if not os.path.exists(model_dir):
+            os.makedirs(model_dir)
+        
         optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
         criterion = nn.BCELoss()
         n_epochs = 50
