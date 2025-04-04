@@ -1,0 +1,17 @@
+hyperparameters:
+  level: 4
+  generate_new_negative_target: False  
+  epochs: 50
+  early_stopping_count: 10
+  batch_size: 128
+  num_layers: 3
+  tr_hidden: 128
+  num_head: 16
+  ff_weight: 1
+  dropout: 0.1
+  learning_rate: 0.0005
+  adj_paths:
+    - "../data/chemical_similarity_matrix.txt"
+    - "../data/drug_interaction_matrix.txt"
+    - "../data/sideEffect_association_matrix.txt"
+  
