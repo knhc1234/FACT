@@ -32,27 +32,27 @@ pip install -r requirements.txt
 
 # Running code example
 
-### 1. Unzip the following files in the "/FACT/data/" directory:
-- chemical_similarity_matrix.txt.gz → chemical_similarity_matrix.txt
-- drug_interaction_matrix.txt.gz → drug_interaction_matrix.txt
-- sideEffect_association_matrix.txt.gz → sideEffect_association_matrix.txt
+### 1. Unzip the following files in the `/FACT/data/` directory:
+- `chemical_similarity_matrix.txt.gz` → `chemical_similarity_matrix.txt`
+- `drug_interaction_matrix.txt.gz` → `drug_interaction_matrix.txt`
+- `sideEffect_association_matrix.txt.gz` → `sideEffect_association_matrix.txt`
 
-### 2. Check the config file("/FACT/configs/FACT.yaml) to set the ATC level for prediction and configure the model hyperparameters.
+### 2. Check the config file(`/FACT/configs/FACT.yaml`) to set the ATC level for prediction and configure the model hyperparameters.
 The hyperparameters are defined as follows:
-- level: Specifies the ATC code level to be predicted (1-4).
-- generate_new_negative_target: Determines whether to generate new negative samples or use existing data (True/False).
-- epochs: Number of training epochs.
-- early_stopping_count: Criterion for applying early stopping.
-- batch_size: Batch size.
-- num_layers: Number of Transformer blocks in the CT Encoder.
-- tr_hidden: CNN output dimension and Transformer's hidden dimension.
-- num_head: Number of attention heads.
-- ff_weight: Ratio for the feed-forward neural network dimension in the Transformer.
-- dropout: Dropout rate.
-- learning_rate: Learning rate for model optimization.
-- adj_paths:  Specifies the paths to the three drug similarity matrices. 
+- `level`: Specifies the ATC code level to be predicted (1-4).
+- `generate_new_negative_target`: Determines whether to generate new negative samples or use existing data (True/False).
+- `epochs`: Number of training epochs.
+- `early_stopping_count`: Criterion for applying early stopping.
+- `batch_size`: Batch size.
+- `num_layers`: Number of Transformer blocks in the CT Encoder.
+- `tr_hidden`: CNN output dimension and Transformer's hidden dimension.
+- `num_head`: Number of attention heads.
+- `ff_weight`: Ratio for the feed-forward neural network dimension in the Transformer.
+- `dropout`: Dropout rate.
+- `learning_rate`: Learning rate for model optimization.
+- `adj_paths`:  Specifies the paths to the three drug similarity matrices. 
 
-### 3. Move to the "/FACT/examples/" directory and run main.py to start training.
+### 3. Move to the `/FACT/examples/` directory and run `main.py` to start training.
 ```
 python main.py
 ```
