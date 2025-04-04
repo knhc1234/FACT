@@ -57,4 +57,4 @@ The hyperparameters are defined as follows:
 python main.py
 ```
 
-### 4. The predicted results for each fold will be saved in the "/FACT/result/level{predicted level}/" directory.
+### 4. The predicted results for each fold will be saved in the `/FACT/result/level{predicted level}/` directory.
